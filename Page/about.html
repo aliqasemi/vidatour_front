@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vida Tour Online</title>
+    <link href="../CJ/css/bootstrap.css" rel="stylesheet">
+    <link href="../CJ/css/style.css" rel="stylesheet">
+    <link href="../CJ/css/aos.css" rel="stylesheet">
+    <link href="../CJ/css/material_icon.css" rel="stylesheet">
+    <script defer src="../CJ/js/all.js"></script> <!--load all styles -->
+</head>
+<body style="font-family: iransans ; background-color: yellow">
+<div class="container-fluid" style="">
+    <div class="row bg-light" style="text-align: center">
+        <div class="col-lg-3">
+            <img class="card-img" style="height: 60px ; width: 120px" src="../img/logo/logo.png">
+        </div>
+        <div class="col-lg-6">
+            <form class="form-inline" dir="rtl">
+                <input class="form-control ml-3 mt-2" type="search" placeholder="مقصد یا اقامتگاه خود را جست و جو کنید" aria-label="Search" style="width: 50%">
+                <button class="btn btn-outline-dark mt-2" type="submit">جست و جو</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="direction: rtl ; text-align: center">
+            <nav class="navbar navbar-expand-lg navbar-light " ;>
+                <div class="collapse navbar-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" data-toggle="modal" data-target="#register" href="#">ثبت نام</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" data-toggle="modal" data-target="#login" href="#">ورود</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<header class="bg-dark text-white" style="direction: rtl ; margin: 0 ; padding: 0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-9 col-xs-9">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                    <a class="navbar-brand" href="#" style="color: rgba(235,226,17,0.97)">ویدا تور آنلاین</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav" style="text-align: center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="../index.html">صفحه اصلی</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="tour.html">تور ها</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="hotel.html">هتل ها</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="about.html" tabindex="-1" aria-disabled="true">درباره ما</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--login: -->
+    <div class="modal fade text-dark"  style="direction: ltr" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                    <h5 class="modal-title text-white" id="exampleModalLongTitle#login">ورود</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputEmail1">ایمیل:</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید" onblur="ValidateEmail(3)">
+                        </div>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputPassword1">رمز عبور:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword3" placeholder="رمز عبور خود را وارد کنید" onblur="ValidatePassword(3)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"><a class="nav-link text-white" href="#">ورود</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--register: -->
+    <div class="modal fade text-dark"  style="direction: ltr" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                    <h5 class="modal-title text-white" id="exampleModalLongTitle">ثبت نام</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputEmail1">ایمیل:</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید" onblur="ValidateEmail(1)">
+                            <small id="emailHelp" class="form-text text-muted">ایمیل شما به هیچ کسی اشتراک گذاشته نمیشود</small>
+                        </div>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputPassword1">رمز عبور:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور خود را وارد کنید(حداقل 6 کاراکتر)" onblur="ValidatePassword(1)">
+                        </div>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputPassword1">تکرار رمز عبور:</label>
+                            <input type="password" class="form-control" id="exampleInputRepeatPassword1" placeholder="رمز عبور خود را بار دیگر وارد کیند" onblur="ValidateRepeatPassword(1)">
+                        </div>
+                    </form>
+                    <form style="text-align: right ; direction: rtl">
+                        <div class="form-row" style="padding: 20px">
+                            <div class="col">
+                                <label for="datepicker">نام</label>
+                                <input type="text" class="form-control" placeholder="نام خود را وارد کیند">
+                            </div>
+                            <div class="col">
+                                <label for="datepicker">نام خانوادگی</label>
+                                <input type="text" class="form-control" placeholder="نام خانودگی خود را وارد نایید">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="datepicker">تاریخ تولد</label>
+                                    <input class="form-control" type="text" id="datepicker" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="datepicker">شماره ملی</label>
+                                    <input class="form-control" type="text" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="datepicker">نام پدر</label>
+                                    <input class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"><a class="nav-link text-white" data-toggle="modal" data-target="#Confirm_code" href="#">درخواست کد تایید</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Confirm_code: -->
+    <div class="modal fade text-dark"  style="direction: ltr" id="Confirm_code" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                    <h5 class="modal-title text-white" id="exampleModalLongTitle_#Confirm_code">کد تایید</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form style="text-align: right ; direction: rtl">
+                        <input type="text" class="form-control" placeholder="کد تایید را وارد نمایید">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"><a class="nav-link text-white" data-toggle="modal" data-target="#Confirm_Code" href="#">درخواست کد تایید</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+<main>
+    <div style="background-image: url('../img/logo/background.jpg') ; width: 100% ; height: auto; background-attachment: fixed ; background-repeat: no-repeat ; background-size: cover; text-align: center ;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="text-align: center ; background-color: rgba(25,109,144,0.56)">
+            <li class="nav-item">
+                <a class="nav-link active" style="color:rgba(8,11,84,0.86); background-color: rgba(39,190,199,0.39)" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="true">تور ها</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color:rgba(8,11,84,0.86); background-color: rgba(39,190,199,0.39)" id="profile-tab" data-toggle="tab" href="#tour" role="tab" aria-controls="tour" aria-selected="false">هتل ها</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color:rgba(8,11,84,0.86); background-color: rgba(39,190,199,0.39)" id="place-tab" data-toggle="tab" href="#place" role="tab" aria-controls="place" aria-selected="false">دیدنی های ایران</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent" style="width: 85% ; margin: 0 auto">
+            <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
+                <form action="searchTour.html">
+                    <div class="form-group row" style="direction: rtl ; text-align: right">
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="origin1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مبدا</label>
+                            <input type="text" style="margin : 0 auto" class="form-control" id="origin1" aria-describedby="" placeholder="مبدا خود را وارد کنید">
+                            <i class="material-icons">location_on</i><label for="location1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مقصد</label>
+                            <input type="text" style="margin : 0 auto" class="form-control" id="location1" aria-describedby="" placeholder="مقصد یا نام هتل خود را وارد کنید">
+                            <i class="material-icons">calendar_today</i><label for="time1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;زمان</label>
+                            <input type="email" style="margin : 0 auto" class="form-control" id="time1" aria-describedby="" placeholder="زمان سفر خود را انتخاب کنید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="tour" role="tabpanel" aria-labelledby="tour-tab">
+                <form action="searchHotel.html">
+                    <div class="form-group row" style="direction: rtl ; text-align: right">
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="hotel1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مقصد</label>
+                            <input type="email" style="margin : 0 auto" class="form-control" id="hotel1" aria-describedby="" placeholder="مقصد خود را وارد کنید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="place" role="tabpanel" aria-labelledby="tour-tab">
+                <form>
+                    <div class="form-group row" style="direction: rtl ; text-align: right">
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="location1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;دیدنی</label>
+                            <input type="email" style="margin : 0 auto" class="form-control" id="see1" aria-describedby="" placeholder="مقصد یا نام دیدنی خود را وارد نمایید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="margin: 0 auto ; margin-bottom: 14px">
+                    <div class="row" style="text-align: center ; alignment: center">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">تضمین بهترین قیمت</h2>
+                            <img src="../img/icon/percent.svg" style="height: 40px ; width: 40px">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">رزرو آنلاین اقامتگاه</h2>
+                            <img src="../img/icon/monitor.svg" style="height: 40px ; width: 40px">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">ضمانت برگشت وجه</h2>
+                            <img src="../img/icon/money.svg" style="height: 40px ; width: 40px">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">همکاری با ما</h2>
+                            <img src="../img/icon/cooparation.svg" style="height: 40px ; width: 40px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <div class="container" style="background-color: yellow ; border-radius: 10px">
+            <div class="row text-dark" style="direction: rtl ;">
+                <div class="col-md-6 col-sm-12">
+                    <hr class="blue_line mt10 mb10"/>
+                    <h1 style="text-align: right">
+                        درباره ما
+                    </h1>
+                    <hr class="blue_line mt10 mb10"/>
+                    <p style="text-align: right ; font-size: 10px">
+
+
+                        ایران با تاریخی کهن، مردمی خونگرم و مهمان‌نواز، طبیعت رویایی و فرهنگی رنگارنگ همیشه مورد کم لطفی رسانه‌های خارجی قرار گرفته است. این پیام نادرست از رسانه‌های خارجی در کنار بی‌توجهی خودمان به این مرز و بوم تنها یک نتیجه در بر داشته است و آن هم این است که نه مردم ایران و نه مردم خارج از کشور، آن طور که شایسته است ایران را نمی‌شناسند و ندیده‌اند.
+
+
+
+
+                        ایران با تاریخی کهن، مردمی خونگرم و مهمان‌نواز، طبیعت رویایی و فرهنگی رنگارنگ همیشه مورد کم لطفی رسانه‌های خارجی قرار گرفته است. این پیام نادرست از رسانه‌های خارجی در کنار بی‌توجهی خودمان به این مرز و بوم تنها یک نتیجه در بر داشته است و آن هم این است که نه مردم ایران و نه مردم خارج از کشور، آن طور که شایسته است ایران را نمی‌شناسند و ندیده‌اند.
+
+                        این موضوع ما را بر آن داشت که پایگاهی بسازیم بر بستر بی‌انتهای اینترنت که ایران و ایرانی را به شکلی درست به تصویر بکشد و جامعه ایرانی و خارجی را به نقاط دیدنی و اعجاب انگیز این مرز و بوم دعوت نماید و نظرات این جامعه علاقه‌مند و ماجراجو را به گوش دیگران برساند.   این موضوع ما را بر آن داشت که پایگاهی بسازیم بر بستر بی‌انتهای اینترنت که ایران و ایرانی را به شکلی درست به تصویر بکشد و جامعه ایرانی و خارجی را به نقاط دیدنی و اعجاب انگیز این مرز و بوم دعوت نماید و نظرات این جامعه علاقه‌مند و ماجراجو را به گوش دیگران برساند.
+                    <hr class="blue_line mt10 mb10"/>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="material-icons">
+                                        settings_ethernet
+                                    </i>
+                                </div>
+                                <div class="col-10" style="text-align: right ; font-size: 15px">
+                                    معرفی و رزرو هتل ها
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12" style="margin: 10% auto ; text-align: center">
+                    <img src="../img/placement/ab.jpg" width="80%" height="90%" style="margin: 0 auto">
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 20px">
+            <h1 class="text-right text-white">ارزش های ما</h1>
+            <div class="row text-white" style="direction: rtl ;">
+                <div class="row" style="margin: 0 auto ; text-align: center">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-12 text-right" >
+                            <i class="material-icons" style="background-color: white ; color: black ; border-radius: 50px ; font-size: 50px">
+                                done_all
+                            </i>
+                        </div>
+                        <div class="col-12 text-right">
+                            <h5>تنوع تورهای داخلی و خارجی</h5>
+                            <p style="color: #9fcdff">شخصی سازی انواع تور برای مسافران</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-12 text-right" >
+                            <i class="material-icons" style="background-color: white ; color: black ; border-radius: 50px ; font-size: 50px">
+                                done_all
+                            </i>
+                        </div>
+                        <div class="col-12 text-right">
+                            <h5>تنوع تورهای داخلی و خارجی</h5>
+                            <p style="color: #9fcdff">شخصی سازی انواع تور برای مسافران</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-12 text-right" >
+                            <i class="material-icons" style="background-color: white ; color: black ; border-radius: 50px ; font-size: 50px">
+                                done_all
+                            </i>
+                        </div>
+                        <div class="col-12 text-right">
+                            <h5>تنوع تورهای داخلی و خارجی</h5>
+                            <p style="color: #9fcdff">شخصی سازی انواع تور برای مسافران</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="background-color: white ; border-radius: 10px; text-align: right ; direction: rtl">
+            <h1 class="text-right text-dark">قوانین و مقرات</h1>
+            <button  class="btn button_befor_footer text-right" style="margin-bottom: 5px" type="button" data-toggle="collapse" data-target="#collapseformtour" aria-expanded="false" aria-controls="collapseExample">
+                کپی برداری
+            </button>
+            <button  class="btn button_befor_footer text-right" style="margin-bottom: 5px" type="button" data-toggle="collapse" data-target="#collapseformtour" aria-expanded="false" aria-controls="collapseExample">
+                محرمانه بودن اطلاعات شما
+            </button>
+            <button  class="btn button_befor_footer text-right" style="margin-bottom: 5px" type="button" data-toggle="collapse" data-target="#collapseformtour" aria-expanded="false" aria-controls="collapseExample">
+                تغییر مشخصات فردی
+            </button>
+            <button  class="btn button_befor_footer text-right" style="margin-bottom: 5px" type="button" data-toggle="collapse" data-target="#collapseformtour" aria-expanded="false" aria-controls="collapseExample">
+                سو استفاده از نام ویدا تور
+            </button>
+            <div class="collapse" id="collapseformtour">
+                <p style="margin: 20px ; font-size: 15px ; margin-bottom: 10px">
+                    خدمات و محتـوای عرضه شده توسط وب‌سـایت ویداتور جهت استـفاده‌ در این وب‌سـایت تولید می‌شوند. هر گونه سوءاستفـاده از اطلاعات، متن‌ها، عکس‌ها، نقشه‌ها، طرح‌ها، لوگو و… از این وب‌سایت پیگرد قانونی دارد و هیچ فرد حقیقی یا حقوقی اجازه‌ی سوء استفاده از مطالب این وب‌سایت را ندارد. ذکر مطالب این وب‌سایت در اینترنت، تنها با ذکر نام و نشانی اینترنتی وب‌سایت ویدا تور  و لینک به مطلب ذکر شده مجاز است و در رسانه‌های کاغذی، با کسب اجازه‌ی کتبی از مسئولان وب‌سایت.
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <section class="my-5">
+                <h2 class="h1-responsive font-weight-bold text-center my-5 text-white">معرفی مشصات تیم</h2>
+                <div class="row" style="text-align: center ; margin: 0 auto">
+                    <div class="col-lg-3 col-md-12 mb-lg-0 mb-4" style="margin: 0 auto">
+                        <div class="card-wrapper">
+                            <div id="card-1" class="card card-rotating text-center">
+                                <div class="face front">
+                                    <div class="avatar mx-auto white">
+                                        <img src="../img/admin_profile/mohamadGhderi.jpg" class="rounded-circle img-fluid"
+                                             alt="First sample avatar image" height="200px" width="200px">
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="font-weight-bold mt-1 mb-3">محمد قادری</h4>
+                                        <p class="font-weight-bold dark-grey-text">مدیر سایت</p>
+                                    </div>
+                                </div>
+                                <div class="face back" style="margin-top:-40px">
+                                    <div class="card-body">
+                                        <h4 class="font-weight-bold mt-4 mb-2">
+                                            <strong>مشخصات</strong>
+                                        </h4>
+                                        <hr>
+                                        <p style="font-size: 10px">
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                        </p>
+                                        <hr>
+                                        <!-- Social Icons -->
+                                        <ul class="list-inline list-unstyled">
+                                            <li class="list-inline-item">
+                                                <a class="p-2 fa-lg fb-ic">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="p-2 fa-lg ins-ic">
+                                                    <i class="fab fa-instagram"> </i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="p-2 fa-lg tw-ic">
+                                                    <i class="fab fa-twitter"> </i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-lg-0 mb-4" style="margin: 0 auto">
+                        <div class="card-wrapper">
+                            <div id="card-2" class="card card-rotating text-center">
+                                <div class="face front">
+                                    <div class="avatar mx-auto white">
+                                        <img src="../img/admin_profile/saeidShorvarzi.jpg" class="rounded-circle img-fluid"
+                                             alt="First sample avatar image" height="200px" width="200px">
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="font-weight-bold mt-1 mb-3">سعید شورورزی</h4>
+                                        <p class="font-weight-bold dark-grey-text">مدیر سایت</p>
+                                    </div>
+                                </div>
+                                <div class="face back" style="margin-top:-40px">
+                                    <div class="card-body">
+                                        <h4 class="font-weight-bold mt-4 mb-2">
+                                            <strong>مشخصات</strong>
+                                        </h4>
+                                        <hr>
+                                        <p style="font-size: 10px">
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                        </p>
+                                        <hr>
+                                        <!-- Social Icons -->
+                                        <ul class="list-inline list-unstyled">
+                                            <li class="list-inline-item">
+                                                <a class="p-2 fa-lg fb-ic">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="p-2 fa-lg ins-ic">
+                                                    <i class="fab fa-instagram"> </i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="p-2 fa-lg tw-ic">
+                                                    <i class="fab fa-twitter"> </i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-6">
+                    <h3> مقصدها </h3>
+                    <ul>
+                        <li> <a href="#"> قم </a> </li>
+                        <li> <a href="#">تهران</a> </li>
+                        <li> <a href="#"> مشهد </a> </li>
+                        <li> <a href="#"> شیراز </a> </li>
+                        <li> <a href="#">خوزستان </a> </li>
+                        <li> <a href="#"> اردبیل </a> </li>
+                        <li> <a href="#"> تبریز </a> </li>
+                        <li> <a href="#"> گلستان </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-6">
+                    <h3 style="font-size: 15px"> اقامتگاه های بوم گردی </h3>
+                    <ul>
+                        <li> <a href="#"> اقامتگاه بوم گردی عارف خرقانی </a> </li>
+                        <li> <a href="#"> اقامتگاه بوم گردی عمارت پروین </a> </li>
+                        <li> <a href="#"> هتل امیران نیشابور </a> </li>
+                        <li> <a href="#"> هتل الماس مشهد </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-6">
+                    <h3> آخرین تورها </h3>
+                    <ul>
+                        <li> <a href="#"> تور آبشار زیارت گرگان </a> </li>
+                        <li> <a href="#"> تور گروهی آبشار لوه تا جنگل ابر(نیشابور) </a> </li>
+                        <li> <a href="#"> تور اکوسافاری اوپرت(نیشابور)</a> </li>
+                        <li> <a href="#"> تورکویررضاآباد(نیشابور) </a> </li>
+                        <li> <a href="#"> تور دریا </a> </li>
+                        <li> <a href="#"> تور ابشار داراباد </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-12 ">
+                    <h3> تماس با ما </h3>
+                    <ul>
+                        <li> <a href="#"> 021-91027127 </a> </li>
+                        <li> <a href="#"> info@vidatour.ir </a> </li>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button" style="margin-top: 10px ; color: black"> ثبت</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-twitter"> </i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+    <div class="footer-bottom">
+        <div class="container" style="text-align: right">
+            <p class="pull-left">استفاده غیر تجاری از اطلاعات گردشگری این وبسایت تنها با ذکر نام منبع بلامانع است، تمامی حقوق مادی و معنوی برای وبسایت ویداتور محفوظ است  </p>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+</body>
+<script>
+    //Shrink header on scroll
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("header").style.fontSize = "30px";
+        } else {
+            document.getElementById("header").style.fontSize = "90px";
+        }
+    }
+</script>
+<script src="../CJ/js/aos.js"></script>
+<script>
+    AOS.init() ;
+</script>
+<link href="../CJ/css/style.css" rel="stylesheet">
+<script src="../CJ/js/jquery.min.js"></script>
+<script src="../CJ/js/bootstrap.js"></script>
+<script src="../CJ/js/bootstrap-datepicker.js"></script>
+<script src="../CJ/js/bootstrap-datepicker.fa.js"></script>
+<script src="../CJ/js/script.js"></script>
+<script>
+    $("#datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+</script>
+</html>

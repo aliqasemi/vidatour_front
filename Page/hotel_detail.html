@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vida Tour Online</title>
+    <link href="../CJ/css/bootstrap.css" rel="stylesheet">
+    <link href="../CJ/css/style.css" rel="stylesheet">
+    <link href="../CJ/css/aos.css" rel="stylesheet">
+    <link href="../CJ/css/material_icon.css" rel="stylesheet">
+    <script defer src="../CJ/js/all.js"></script> <!--load all styles -->
+</head>
+<body style="font-family: iransans ; background-color: yellow">
+<div class="container-fluid" style="">
+    <div class="row bg-light" style="text-align: center">
+        <div class="col-lg-3">
+            <img class="card-img" style="height: 60px ; width: 120px" src="../img/logo/logo.png">
+        </div>
+        <div class="col-lg-6">
+            <form class="form-inline" dir="rtl">
+                <input class="form-control ml-3 mt-2" type="search" placeholder="مقصد یا اقامتگاه خود را جست و جو کنید" aria-label="Search" style="width: 50%">
+                <button class="btn btn-outline-dark mt-2" type="submit">جست و جو</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="direction: rtl ; text-align: center">
+            <nav class="navbar navbar-expand-lg navbar-light " ;>
+                <div class="collapse navbar-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" data-toggle="modal" data-target="#register" href="#">ثبت نام</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" data-toggle="modal" data-target="#login" href="#">ورود</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<header class="bg-dark text-white" style="direction: rtl ; margin: 0 ; padding: 0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-9 col-xs-9">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                    <a class="navbar-brand" href="#" style="color: rgba(235,226,17,0.97)">ویدا تور آنلاین</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav" style="text-align: center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="../index.html">صفحه اصلی</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="tour.html">تور ها</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="hotel.html">هتل ها</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="about.html" tabindex="-1" aria-disabled="true">درباره ما</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--login: -->
+    <div class="modal fade text-dark"  style="direction: ltr" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                    <h5 class="modal-title text-white" id="exampleModalLongTitle#login">ورود</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputEmail1">ایمیل:</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید" onblur="ValidateEmail(3)">
+                        </div>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputPassword1">رمز عبور:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword3" placeholder="رمز عبور خود را وارد کنید" onblur="ValidatePassword(3)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"><a class="nav-link text-white" href="#">ورود</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--register: -->
+    <div class="modal fade text-dark"  style="direction: ltr" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                    <h5 class="modal-title text-white" id="exampleModalLongTitle">ثبت نام</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputEmail1">ایمیل:</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید" onblur="ValidateEmail(1)">
+                            <small id="emailHelp" class="form-text text-muted">ایمیل شما به هیچ کسی اشتراک گذاشته نمیشود</small>
+                        </div>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputPassword1">رمز عبور:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور خود را وارد کنید(حداقل 6 کاراکتر)" onblur="ValidatePassword(1)">
+                        </div>
+                        <div class="form-group" style="direction: rtl ; text-align: right">
+                            <label for="exampleInputPassword1">تکرار رمز عبور:</label>
+                            <input type="password" class="form-control" id="exampleInputRepeatPassword1" placeholder="رمز عبور خود را بار دیگر وارد کیند" onblur="ValidateRepeatPassword(1)">
+                        </div>
+                    </form>
+                    <form style="text-align: right ; direction: rtl">
+                        <div class="form-row" style="padding: 20px">
+                            <div class="col">
+                                <label for="datepicker">نام</label>
+                                <input type="text" class="form-control" placeholder="نام خود را وارد کیند">
+                            </div>
+                            <div class="col">
+                                <label for="datepicker">نام خانوادگی</label>
+                                <input type="text" class="form-control" placeholder="نام خانودگی خود را وارد نایید">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="datepicker">تاریخ تولد</label>
+                                    <input class="form-control" type="text" id="datepicker" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="datepicker">شماره ملی</label>
+                                    <input class="form-control" type="text" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="datepicker">نام پدر</label>
+                                    <input class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"><a class="nav-link text-white" data-toggle="modal" data-target="#Confirm_code" href="#">درخواست کد تایید</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Confirm_code: -->
+    <div class="modal fade text-dark"  style="direction: ltr" id="Confirm_code" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                    <h5 class="modal-title text-white" id="exampleModalLongTitle_#Confirm_code">کد تایید</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form style="text-align: right ; direction: rtl">
+                        <input type="text" class="form-control" placeholder="کد تایید را وارد نمایید">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"><a class="nav-link text-white" data-toggle="modal" data-target="#Confirm_Code" href="#">درخواست کد تایید</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div style="background-image: url('../img/logo/background.jpg') ; width: 100% ; height: auto; background-attachment: fixed ; background-repeat: no-repeat ; background-size: cover; text-align: center ;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="text-align: center ; background-color: rgba(25,109,144,0.56)">
+            <li class="nav-item">
+                <a class="nav-link active" style="color:rgba(8,11,84,0.86); background-color: rgba(39,190,199,0.39)" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="true">تور ها</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color:rgba(8,11,84,0.86); background-color: rgba(39,190,199,0.39)" id="profile-tab" data-toggle="tab" href="#tour" role="tab" aria-controls="tour" aria-selected="false">هتل ها</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color:rgba(8,11,84,0.86); background-color: rgba(39,190,199,0.39)" id="place-tab" data-toggle="tab" href="#place" role="tab" aria-controls="place" aria-selected="false">دیدنی های ایران</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent" style="width: 85% ; margin: 0 auto">
+            <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
+                <form action="searchTour.html">
+                    <div class="form-group row" style="direction: rtl ; text-align: right">
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="origin1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مبدا</label>
+                            <input type="text" style="margin : 0 auto" class="form-control" id="origin1" aria-describedby="" placeholder="مبدا خود را وارد کنید">
+                            <i class="material-icons">location_on</i><label for="location1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مقصد</label>
+                            <input type="text" style="margin : 0 auto" class="form-control" id="location1" aria-describedby="" placeholder="مقصد یا نام هتل خود را وارد کنید">
+                            <i class="material-icons">calendar_today</i><label for="time1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;زمان</label>
+                            <input type="text" id="datepicker1" style="margin : 0 auto" class="form-control" id="time1" aria-describedby="" placeholder="زمان سفر خود را انتخاب کنید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="tour" role="tabpanel" aria-labelledby="tour-tab">
+                <form action="searchHotel.html">
+                    <div class="form-group row" style="direction: rtl ; text-align: right">
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="hotel1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مقصد</label>
+                            <input type="email" style="margin : 0 auto" class="form-control" id="hotel1" aria-describedby="" placeholder="مقصد خود را وارد کنید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="place" role="tabpanel" aria-labelledby="tour-tab">
+                <form>
+                    <div class="form-group row" style="direction: rtl ; text-align: right">
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="location1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;دیدنی</label>
+                            <input type="email" style="margin : 0 auto" class="form-control" id="see1" aria-describedby="" placeholder="مقصد یا نام دیدنی خود را وارد نمایید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="margin: 0 auto ; margin-bottom: 14px">
+                    <div class="row" style="text-align: center ; alignment: center">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">تضمین بهترین قیمت</h2>
+                            <img src="../img/icon/percent.svg" style="height: 40px ; width: 40px">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">رزرو آنلاین اقامتگاه</h2>
+                            <img src="../img/icon/monitor.svg" style="height: 40px ; width: 40px">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">ضمانت برگشت وجه</h2>
+                            <img src="../img/icon/money.svg" style="height: 40px ; width: 40px">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 second_main" style="margin: 14px auto">
+                            <h2 style="color: rgba(255,236,20,0.92) ; background-color: #0b0d18; font-size: 14px ; border-radius: 20px">همکاری با ما</h2>
+                            <img src="../img/icon/cooparation.svg" style="height: 40px ; width: 40px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <hr class="blue_line mt10 mb10"/>
+        <div class="row" style="margin: 5px auto ;">
+            <hr class="blue_line mt10 mb10"/>
+            <div class="col-4" style="text-align: center ; margin: 0 auto ; font-size: 30px ; font: bold ; border-radius: 5px">اقامتگاه طرقبه</div>
+            <hr class="blue_line mt10 mb10"/>
+        </div>
+        <hr class="blue_line mt10 mb10"/>
+        <div class="row" style="margin: 5px auto">
+            <div class="col-lg-12">
+                <div class="top-content">
+                    <div class="container-fluid">
+                        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                                    <img src="../img/placement/semnan.jpg" style="height: 500px ; width: 100%">
+                                </div>
+                                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img src="../img/placement/mashhad.jpg" style="height: 500px ; width: 100%">
+                                </div>
+                                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img src="../img/placement/semnan.jpg" style="height: 500px ; width: 100%">
+                                </div>
+                                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img src="../img/placement/mashhad.jpg" style="height: 500px ; width: 100%">
+                                </div>
+                                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img src="../img/placement/semnan.jpg" style="height: 500px ; width: 100%">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-lg-12">
+                <hr class="blue_line mt10 mb10"/>
+                <div class="row" style="direction: rtl ; text-align: right ; margin-right: 20px ;">
+                    <i class="material-icons">location_on</i>
+                    <h3 >ادرس دقیق مجموعه:</h3>
+                </div>
+                <hr class="blue_line mt10 mb10"/>
+                <div class="row" style="direction: rtl ; text-align: right ; margin-right: 30px">
+                    <h6>قم باجک 2 بلوار ظریفیان 12 متری معصومیه</h6>
+                </div>
+                <hr class="blue_line mt10 mb10"/>
+                <div class="row" style="direction: rtl ; margin: 10px auto ; text-align: center ;">
+                    <!--Google map-->
+                    <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px ; margin: 0 auto ; text-align: center ; width: 100%">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1640.8765560565892!2d50.90846294409073!3d34.660937491960894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93bbec9fef8e1d%3A0x7c221c6d0ba5706c!2zUW9tLCDYrtuM2KfYqNin2YYg2LTZh9uM2K8g2LjYsduM2YHbjNin2YbigKzigI7YjCBJcmFu!5e0!3m2!1sen!2sus!4v1566260375343!5m2!1sen!2sus" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <!--Google Maps-->
+                </div>
+                <hr class="blue_line mt10 mb10"/>
+            </div>
+        </div>
+        <div class="row" style="margin: 5px auto ;">
+            <div class="col-4" style="text-align: center ; margin: 0 auto ; font-size: 30px ; border-radius: 5px">رزرو و خدمات</div>
+        </div>
+        <hr class="blue_line mt10 mb10"/>
+        <div class="row" style="margin: 10px">
+            <div class="col-12">
+                <div class="row" style="margin: 5px auto ; text-align: center">
+                    <div class="col-lg-3"><i class="material-icons" style="font-size: 80px">restaurant</i></div>
+                    <div class="col-lg-3" >
+                        <div class="row" style="text-align: center ;">
+                            <div class="col-6" style="border: solid #4e555b ; border-radius: 5px;  margin: 2px auto ;">
+                                <del class="text-muted"> 80000 تومان</del>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="border: solid black ; border-radius: 5px;  margin: 2px auto ;">
+                                20% تخفیف
+                            </div>
+                            <div class="col-6" style="border: solid black ; border-radius: 5px; margin: 2px auto ;">
+                                60000 تومان
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5>اتاق خواب 15 متری (همکف) </h5>
+                        <p style="font-size: 10px">
+                            توضیحات: اتاق محدودیت تعداد نفرات ندارد، اما تنها 3 بالشت و پتو به هر اتاق اختصاص داده می شود. سفارش شما، بصورت آنی، تایید و آماده پرداخت خواهد شد. ضمناً از ارائه خدمت به آقایان و خانم‌های مجرد معذوریم
+                        </p>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="#" class="btn btn-primary button_befor_footer" data-toggle="collapse" data-target="#collapseformtour1" style="margin: 0 auto ; transition: all .5s ;">رزرو</a>
+                        <a href="#" data-toggle="modal" data-target="#Possibilities" class="btn btn-info button_befor_footer" style="margin: 0 auto ; transition: all .5s ;">امکانات</a>
+                        <!--Possibilities: -->
+                        <div class="modal fade text-dark"  style="direction: ltr" id="Possibilities" tabindex="-1" role="dialog" aria-labelledby="Possibilities" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                                        <h5 class="modal-title text-white" id="exampleModalLongTitle#Possibilities">امکانات</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-4 bg-light text-danger" style="font-size: 10px ; text-align: center ; border-radius: 20px">
+                                                <div class="row">
+                                                    <div class="col-5 text-center" style="margin-top: 8px ; margin-left: 20px">صبحانه</div>
+                                                    <div class="col-5 text-center"><i class="material-icons">cancel_presentation</i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 bg-light text-success" style="font-size: 10px ; text-align: center ; border-radius: 20px">
+                                                <div class="row">
+                                                    <div class="col-5 text-center" style="margin-top: 8px ; margin-left: 20px">سیستم گرمایشی</div>
+                                                    <div class="col-5 text-center" style="margin-top: 4px"><i class="material-icons">done</i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 bg-light text-success" style="font-size: 10px ; text-align: center ; border-radius: 20px">
+                                                <div class="row">
+                                                    <div class="col-5 text-center" style="margin-top: 8px ; margin-left: 20px">کولر</div>
+                                                    <div class="col-5 text-center" style="margin-top: 4px"><i class="material-icons">done</i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade text-dark"  style="direction: ltr" id="reserve" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #0b0d18" dir=rtl>
+                                        <h5 class="modal-title text-white" id="exampleModalLongTitle1">رزرو</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group" style="direction: rtl ; text-align: right">
+                                                <label for="name&lastname">نام و نام خانوادگی سرپرست:</label>
+                                                <input type="text" class="form-control" id="name&lastname" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی سرپرست:" >
+                                            </div>
+                                            <div class="form-group" style="direction: rtl ; text-align: right">
+                                                <label for="code">کد ملی:</label>
+                                                <input type="email" class="form-control" id="code" aria-describedby="emailHelp" placeholder="کد ملی" >
+                                            </div>
+                                            <div class="form-group" style="direction: rtl ; text-align: right">
+                                                <label for="phonenumber">شماره تلفن:</label>
+                                                <input type="text" class="form-control" id="phonenumber" aria-describedby="emailHelp" placeholder="شماره تلفن:" >
+                                            </div>
+                                            <div class="form-group" id="person" style="direction: rtl ; text-align: right ; display: none">
+                                                <label for="phonenumber">بزرگسالان</label>
+                                            </div>
+
+                                            <hr class="blue_line mt10 mb10"/>
+
+                                            <div class="form-group" id="person1j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person1" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر اول:">
+                                            </div>
+                                            <div class="form-group" id="id1j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id1" aria-describedby="emailHelp" placeholder="کد ملی نفر اول:">
+                                            </div>
+                                            <div class="form-group" id="person2j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person2" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دوم:">
+                                            </div>
+                                            <div class="form-group" id="id2j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id2" aria-describedby="emailHelp" placeholder="کد ملی نفر دوم:">
+                                            </div>
+                                            <div class="form-group" id="person3j"style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person3" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر سوم:">
+                                            </div>
+                                            <div class="form-group" id="id3j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id3" aria-describedby="emailHelp" placeholder="کد ملی نفر سوم:">
+                                            </div>
+                                            <div class="form-group"  id="person4j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person4" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر چهارم:">
+                                            </div>
+                                            <div class="form-group" id="id4j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id4" aria-describedby="emailHelp" placeholder="کد ملی نفر چهارم:">
+                                            </div>
+                                            <div class="form-group" id="person5j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person5" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر پنجم:">
+                                            </div>
+                                            <div class="form-group" id="id5j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id5" aria-describedby="emailHelp" placeholder="کد ملی نفر پنجم:">
+                                            </div>
+                                            <div class="form-group" id="person6j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person6" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر ششم:">
+                                            </div>
+                                            <div class="form-group" id="id6j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id6" aria-describedby="emailHelp" placeholder="کد ملی نفر ششم:">
+                                            </div>
+                                            <div class="form-group" id="person7j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person7" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هفتم:">
+                                            </div>
+                                            <div class="form-group" id="id7j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id7" aria-describedby="emailHelp" placeholder="کد ملی نفر هفتم:">
+                                            </div>
+                                            <div class="form-group" id="person8j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="person8" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هشتم:">
+                                            </div>
+                                            <div class="form-group" id="id8j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id8" aria-describedby="emailHelp" placeholder="کد ملی نفر هشتم:">
+                                            </div>
+                                            <div class="form-group" id="person9j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="person9" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر نهم:">
+                                            </div>
+                                            <div class="form-group" id="id9j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id9" aria-describedby="emailHelp" placeholder="کد ملی نفر نهم:">
+                                            </div>
+                                            <div class="form-group" id="person10j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="person10" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دهم:">
+                                            </div>
+                                            <div class="form-group" id="id10j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id10" aria-describedby="emailHelp" placeholder="کد ملی نفر دهم:">
+                                            </div>
+                                            <div class="form-group" id="person11j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="person11" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر یازدهم:">
+                                            </div>
+                                            <div class="form-group" id="id11j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id11" aria-describedby="emailHelp" placeholder="کد ملی نفر یازدهم:">
+                                            </div>
+                                            <div class="form-group" id="person12j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person12" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دوازدهم:">
+                                            </div>
+                                            <div class="form-group" id="id12j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id12" aria-describedby="emailHelp" placeholder="کد ملی نفر دواردهم:">
+                                            </div>
+                                            <div class="form-group" id="person13j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person13" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر سیزدهم:">
+                                            </div>
+                                            <div class="form-group" id="id13j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id13" aria-describedby="emailHelp" placeholder="کد ملی نفر سیزدههم:">
+                                            </div>
+                                            <div class="form-group" id="person14j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person14" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر چهاردهم:">
+                                            </div>
+                                            <div class="form-group" id="id14j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id14" aria-describedby="emailHelp" placeholder="کد ملی نفر جهردهم:">
+                                            </div>
+                                            <div class="form-group" id="person15j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person15" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر پانزدهم:">
+                                            </div>
+                                            <div class="form-group" id="id15j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id15" aria-describedby="emailHelp" placeholder="کد ملی نفر پازدهم:">
+                                            </div>
+                                            <div class="form-group" id="person16j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person16" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر شانزدهم:">
+                                            </div>
+                                            <div class="form-group" id="id16j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id16" aria-describedby="emailHelp" placeholder="کد ملی نفر شانزدهم:">
+                                            </div>
+                                            <div class="form-group" id="person17j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="person17" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هفدهم:">
+                                            </div>
+                                            <div class="form-group" id="id17j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id17" aria-describedby="emailHelp" placeholder="کد ملی نفر هفدهم:">
+                                            </div>
+                                            <div class="form-group" id="person18j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person18" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هجدهم:">
+                                            </div>
+                                            <div class="form-group" id="id18j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id18" aria-describedby="emailHelp" placeholder="کد ملی نفر هجدهم:">
+                                            </div>
+                                            <div class="form-group" id="person19j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person19" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر نوزدهم:">
+                                            </div>
+                                            <div class="form-group" id="id19j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="id19" aria-describedby="emailHelp" placeholder="کد ملی نفر نوزدهم:">
+                                            </div>
+                                            <div class="form-group" id="person20j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="person20" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر بیستم:">
+                                            </div>
+                                            <div class="form-group" id="child" style="direction: rtl ; text-align: right ; display: none">
+                                                <label for="phonenumber">کودکان</label>
+                                            </div>
+                                            <hr class="blue_line mt10 mb10"/>
+                                            <div class="form-group" id="child1j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child1" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر اول:">
+                                            </div>
+                                            <div class="form-group" id="cid1j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid1" aria-describedby="emailHelp" placeholder="کد ملی نفر اول:">
+                                            </div>
+                                            <div class="form-group" id="child2j"style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child2" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دوم:">
+                                            </div>
+                                            <div class="form-group" id="cid2j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid2" aria-describedby="emailHelp" placeholder="کد ملی نفر دوم:">
+                                            </div>
+                                            <div class="form-group" id="child3j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child3" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر سوم:">
+                                            </div>
+                                            <div class="form-group" id="cid3j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid3" aria-describedby="emailHelp" placeholder="کد ملی نفر سوم:">
+                                            </div>
+                                            <div class="form-group" id="child4j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child4" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر چهارم:">
+                                            </div>
+                                            <div class="form-group" id="cid4j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid4" aria-describedby="emailHelp" placeholder="کد ملی نفر چهارم:">
+                                            </div>
+                                            <div class="form-group" id="child5j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child5" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر پنجم:">
+                                            </div>
+                                            <div class="form-group" id="cid5j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid5" aria-describedby="emailHelp" placeholder="کد ملی نفر پنجم:">
+                                            </div>
+                                            <div class="form-group" id="child6j "style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child6" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر ششم:">
+                                            </div>
+                                            <div class="form-group" id="cid6j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid6" aria-describedby="emailHelp" placeholder="کد ملی نفر ششم:">
+                                            </div>
+                                            <div class="form-group" id="child7j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="child7" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هفتم:">
+                                            </div>
+                                            <div class="form-group" id="cid7j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid7" aria-describedby="emailHelp" placeholder="کد ملی نفر هفتم:">
+                                            </div>
+                                            <div class="form-group" id="child8j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="child8" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هشتم:">
+                                            </div>
+                                            <div class="form-group" id="cid8j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid8" aria-describedby="emailHelp" placeholder="کد ملی نفر هشتم:">
+                                            </div>
+                                            <div class="form-group" id="child9j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="child9" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر نهم:">
+                                            </div>
+                                            <div class="form-group" id="cid9j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid9" aria-describedby="emailHelp" placeholder="کد ملی نفر نهم:">
+                                            </div>
+                                            <div class="form-group" id="child10j"style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="child10" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دهم:">
+                                            </div>
+                                            <div class="form-group" id="cid10j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="cid10" aria-describedby="emailHelp" placeholder="کد ملی نفر دهم:">
+                                            </div>
+                                            <div class="form-group" id="baby" style="direction: rtl ; text-align: right ; display: none">
+                                                <label for="phonenumber">خردسال</label>
+                                            </div>
+                                            <hr class="blue_line mt10 mb10"/>
+                                            <div class="form-group" id="baby1j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby1" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر اول:">
+                                            </div>
+                                            <div class="form-group" id="bid1j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid1" aria-describedby="emailHelp" placeholder="کد ملی نفر اول:">
+                                            </div>
+                                            <div class="form-group" id="baby2j"style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby2" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دوم:">
+                                            </div>
+                                            <div class="form-group" id="bid2j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid2" aria-describedby="emailHelp" placeholder="کد ملی نفر دوم:">
+                                            </div>
+                                            <div class="form-group" id="baby3j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby3" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر سوم:">
+                                            </div>
+                                            <div class="form-group" id="bid3j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid3" aria-describedby="emailHelp" placeholder="کد ملی نفر سوم:">
+                                            </div>
+                                            <div class="form-group" id="baby4j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby4" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر چهارم:">
+                                            </div>
+                                            <div class="form-group" id="bid4j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid4" aria-describedby="emailHelp" placeholder="کد ملی نفر چهارم:">
+                                            </div>
+                                            <div class="form-group" id="baby5j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby5" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر پنجم:">
+                                            </div>
+                                            <div class="form-group" id="bid5j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid5" aria-describedby="emailHelp" placeholder="کد ملی نفر پنجم:">
+                                            </div>
+                                            <div class="form-group" id="baby6j "style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby6" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر ششم:">
+                                            </div>
+                                            <div class="form-group" id="bid6j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid6" aria-describedby="emailHelp" placeholder="کد ملی نفر ششم:">
+                                            </div>
+                                            <div class="form-group" id="baby7j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="baby7" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هفتم:">
+                                            </div>
+                                            <div class="form-group" id="bid7j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid7" aria-describedby="emailHelp" placeholder="کد ملی نفر هفتم:">
+                                            </div>
+                                            <div class="form-group" id="baby8j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="baby8" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر هشتم:">
+                                            </div>
+                                            <div class="form-group" id="bid8j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid8" aria-describedby="emailHelp" placeholder="کد ملی نفر هشتم:">
+                                            </div>
+                                            <div class="form-group" id="baby9j" style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="baby9" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر نهم:">
+                                            </div>
+                                            <div class="form-group" id="bid9j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid9" aria-describedby="emailHelp" placeholder="کد ملی نفر نهم:">
+                                            </div>
+                                            <div class="form-group" id="baby10j"style="direction: rtl ; text-align: right; display: none">
+                                                <input type="text" class="form-control" id="baby10" aria-describedby="emailHelp" placeholder="نام و نام خانوادگی نفر دهم:">
+                                            </div>
+                                            <div class="form-group" id="bid10j" style="direction: rtl ; text-align: right ; display: none">
+                                                <input type="text" class="form-control" id="bid10" aria-describedby="emailHelp" placeholder="کد ملی نفر دهم:">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"><a class="nav-link text-white" data-toggle="modal" data-target="#Complete_personal_information" href="#">تکیمل اطلاعات . انتقال به درگاه بانکی</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseformtour1" style="margin: 0 auto">
+                        <div class="card card-body">
+                            <div class="form">
+                                <div class="row" style="direction: rtl ; text-align: center">
+                                    <div class="col-lg-2">
+                                        <label for="numberadult">تعداد بزرگسالان:</label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <input type="number" value="0" min = "1" max="20" ; id="numberadult" class="form-control" oninput="PrintAdult()">
+                                    </div>
+                                    <script>
+                                        var number_adult = document.getElementById("numberadult") ;
+                                        function PrintAdult(){
+                                            if (number_adult.value > 0 ){
+                                                document.getElementById("person").style.display = 'block' ;
+                                                for (var i = 0; i < number_adult.value - 1; i++) {
+                                                    document.getElementById("person" + (i + 1) + "j").style.display = 'block' ;
+                                                    document.getElementById("id" + (i + 1) + "j").style.display = 'block' ;
+                                                }
+                                            }
+                                        }
+
+                                    </script>
+                                    <div class="col-lg-2">
+                                        <label for="numberchild">تعداد کودک</label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <input type="number" value="0" min = "0" max="10" id="numberchild" class="form-control" oninput="PrintChild()">
+                                        <script>
+                                            var number_child = document.getElementById("numberchild") ;
+                                            function PrintChild(){
+                                                if (number_child.value > 0 ){
+                                                    document.getElementById("child").style.display = 'block' ;
+                                                    for (var i = 0; i < number_child.value; i++) {
+                                                        document.getElementById("child" + (i + 1) + "j").style.display = 'block' ;
+                                                        document.getElementById("cid" + (i + 1) + "j").style.display = 'block' ;
+                                                    }
+                                                }
+                                            }
+
+                                        </script>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label for="numberbaby">تعداد خردسال</label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <input type="number" value="0" min = "0" max="10" id="numberbaby" class="form-control" oninput="PrintBaby()">
+                                        <script>
+                                            var number_baby = document.getElementById("numberbaby") ;
+                                            function PrintBaby(){
+                                                if (number_baby.value > 0 ){
+                                                    document.getElementById("baby").style.display = 'block' ;
+                                                    for (var i = 0; i < number_baby.value; i++) {
+                                                        document.getElementById("baby" + (i + 1) + "j").style.display = 'block' ;
+                                                        document.getElementById("bid" + (i + 1) + "j").style.display = 'block' ;
+                                                    }
+                                                }
+                                            }
+
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <a  data-toggle="modal" data-target="#reserve" href="#" class="btn btn-primary button_befor_footer" type="button" style="margin: 10px auto ; width: 30%">
+                                        رزرو
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="blue_line mt10 mb10"/>
+        <div class="row" style="text-align: center ; margin: 0 auto ;">
+            <ul class="nav nav-tabs" id="Tab" role="tablist" style="text-align: center ; margin: 0 auto">
+                <li class="nav-item" style="margin: 0 auto ;">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#information" role="tab" aria-controls="home" aria-selected="true">اطلاعات تکمیلی</a>
+                </li>
+                <li class="nav-item" style="margin: 0 auto ;">
+                    <a class="nav-link"  data-toggle="tab" href="#feature" role="tab" aria-controls="profile" aria-selected="false">امکانات و ویژگی ها</a>
+                </li>
+                <li class="nav-item" style="margin: 0 auto ;">
+                    <a class="nav-link"  data-toggle="tab" href="#cancel" role="tab" aria-controls="contact" aria-selected="false">شرایط کنسلی</a>
+                </li>
+                <li class="nav-item" style="margin: 0 auto ;">
+                    <a class="nav-link"data-toggle="tab" href="#time" role="tab" aria-controls="contact" aria-selected="false">زمان تحویل و تخلیه</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="tab-content" style="margin: 0 auto ;width: 60% ; text-align: right ; line-height: 3">
+                <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="home-tab">
+                    زائرسرای آستان مبارک حضرت حسین بن موسی الکاظم (ع) طبس در جوار حرم مطهر ایشان قرار دارد و در مسیر زیارت امام رضا (ع) میزبان خیل عظیمی از زائران و شهروندان کشور است. در این امام زاده، تسهیلات اقامتی از قبیل واحدهای اقامتی با تجهیزات کامل برای استراحت، باغ رضوان با چشم‌اندازی قابل تحسین، آشپزخانه‌های عمومی با تجهیزات کامل آشپزی، دو باب سقاخانه دارای آب سرد و شیرین، فروشگاه‌های محصولات فرهنگی و مواد غذایی، دارالشفاء و پاسگاه انتظامی حرم، گرمابه رضوان، پارک بازی کودکان، پارکینگ‌های وسائل نقلیه سبک و سنگین، سرویس‌های بهداشتی و فضای سبز زیبا برای زائران فراهم است.
+
+                    قوانین رزرو آنی اتاق یا سوئیت
+                    1- رزرو اتاق یا سوئیت برای هر تاریخی از 31 روز قبل بر روی سایت فعال می گردد و ساعت 18 روز قبل نیز سایت بسته می‌شود. مدت رزرو شما هم نمی تواند بیش از 5 شب باشد. باتوجه به آن که حداقل 30 روز برای رزرو اتاق یا سوئیت مهلت دارید، خواهشمند است انجام رزرو را به ساعات پایانی موکول نکنید.
+                    2- در هنگام تشریف‌فرمایی به زائرسرای آستان حضرت حسین بن موسی الکاظم (ع)، کد رهگیری پیامک شده را همراه با یک کارت شناسایی معتبر که مشخصات آن با سفارش شما انطباق دارد و مدارک محرمیت (برای خانواده ها)، به دفتر زائرسرا ارائه دهید.
+                    3- اتاق ها در طبقه همکف هستند و پله نمی خورند، اما همه سوئیت‌ها در طبقه فوقانی هستند و پله دارند. خواهشمند است در هنگام رزرو به این نکته توجه فرمائید.
+                    4- همراه داشتن چادر برای خانم‌ها الزامی است.
+                    5- با توجه به آن که زائرسرا بصورت 24 ساعته و شبانه روزی مشغول خدمات دهی به مسافران است، چنانچه نیمه شب نیز تشریف بیاورید، واحد اقامتی رزرو شده در اختیار شما قرار خواهد گرفت.
+                    6- امکان رزرو اتاق یا سوئیت برای روز جاری به هیچ عنوان وجود ندارد. خواهشمند است سوال نفرمائید.
+                    7- رزرو تنها بصورت اینترنتی است و به هیچ عنوان رزرو تلفنی نداریم. خواهشمند است تلفن های پشتیبانی سایت را اشغال نفرمائید.
+                    8- شماره تماس پذیرش زائرسرای طبس:  05632813400
+
+                    فاصله (تقریبی) این اقامتگاه تا جاذبه های گردشگری و مکان های مهم
+                    فاصله تا  فرودگاه طبس --> 9.9 کیلومتر ( 10 دقیقه )
+                    فاصله تا  ایستگاه راه آهن طبس --> 3.6  کیلومتر ( 5 دقیقه )
+                    فاصله تا پایانه مسافربری طبس --> 600 متر ( 2 دقیقه )
+                    فاصله تا ارگ طبس --> 3 کیلومتر ( 7 دقیقه )
+                    فاصله تا باغ گلشن --> 4.4 کیلومتر (9 دقیقه )
+                    فاصله تا روستای دیدنی اصفهک --> 43.2  کیلومتر ( 36 دقیقه )
+                    فاصله تا روستای گردشگری ازمیغان ( کال جنی و  تخت عروس ) --> 41.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا چشمه آب گرم و سرد مرتضی علی ( روستای خرو ) --> 34.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا روستای حلوان --> 82  کیلومتر ( 1 ساعت  )
+                    فاصله تا سد کریت --> 61 کیلومتر ( 1 ساعت و 1 دقیقه )
+                    فاصله تا روستای نایبند ( ماسوله کویر ) --> 209 کیلومتر ( 2 ساعت و 22 دقیقه )
+                    فاصله تا آبگرم دیگ رستم --> 218 کیلومتر ( 2 ساعت و 28 دقیقه )
+                </div>
+                <div class="tab-pane fade" id="feature" role="tabpanel" aria-labelledby="profile-tab">
+                    زائرسرای آستان مبارک حضرت حسین بن موسی الکاظم (ع) طبس در جوار حرم مطهر ایشان قرار دارد و در مسیر زیارت امام رضا (ع) میزبان خیل عظیمی از زائران و شهروندان کشور است. در این امام زاده، تسهیلات اقامتی از قبیل واحدهای اقامتی با تجهیزات کامل برای استراحت، باغ رضوان با چشم‌اندازی قابل تحسین، آشپزخانه‌های عمومی با تجهیزات کامل آشپزی، دو باب سقاخانه دارای آب سرد و شیرین، فروشگاه‌های محصولات فرهنگی و مواد غذایی، دارالشفاء و پاسگاه انتظامی حرم، گرمابه رضوان، پارک بازی کودکان، پارکینگ‌های وسائل نقلیه سبک و سنگین، سرویس‌های بهداشتی و فضای سبز زیبا برای زائران فراهم است.
+
+                    قوانین رزرو آنی اتاق یا سوئیت
+                    1- رزرو اتاق یا سوئیت برای هر تاریخی از 31 روز قبل بر روی سایت فعال می گردد و ساعت 18 روز قبل نیز سایت بسته می‌شود. مدت رزرو شما هم نمی تواند بیش از 5 شب باشد. باتوجه به آن که حداقل 30 روز برای رزرو اتاق یا سوئیت مهلت دارید، خواهشمند است انجام رزرو را به ساعات پایانی موکول نکنید.
+                    2- در هنگام تشریف‌فرمایی به زائرسرای آستان حضرت حسین بن موسی الکاظم (ع)، کد رهگیری پیامک شده را همراه با یک کارت شناسایی معتبر که مشخصات آن با سفارش شما انطباق دارد و مدارک محرمیت (برای خانواده ها)، به دفتر زائرسرا ارائه دهید.
+                    3- اتاق ها در طبقه همکف هستند و پله نمی خورند، اما همه سوئیت‌ها در طبقه فوقانی هستند و پله دارند. خواهشمند است در هنگام رزرو به این نکته توجه فرمائید.
+                    4- همراه داشتن چادر برای خانم‌ها الزامی است.
+                    5- با توجه به آن که زائرسرا بصورت 24 ساعته و شبانه روزی مشغول خدمات دهی به مسافران است، چنانچه نیمه شب نیز تشریف بیاورید، واحد اقامتی رزرو شده در اختیار شما قرار خواهد گرفت.
+                    6- امکان رزرو اتاق یا سوئیت برای روز جاری به هیچ عنوان وجود ندارد. خواهشمند است سوال نفرمائید.
+                    7- رزرو تنها بصورت اینترنتی است و به هیچ عنوان رزرو تلفنی نداریم. خواهشمند است تلفن های پشتیبانی سایت را اشغال نفرمائید.
+                    8- شماره تماس پذیرش زائرسرای طبس:  05632813400
+
+                    فاصله (تقریبی) این اقامتگاه تا جاذبه های گردشگری و مکان های مهم
+                    فاصله تا  فرودگاه طبس --> 9.9 کیلومتر ( 10 دقیقه )
+                    فاصله تا  ایستگاه راه آهن طبس --> 3.6  کیلومتر ( 5 دقیقه )
+                    فاصله تا پایانه مسافربری طبس --> 600 متر ( 2 دقیقه )
+                    فاصله تا ارگ طبس --> 3 کیلومتر ( 7 دقیقه )
+                    فاصله تا باغ گلشن --> 4.4 کیلومتر (9 دقیقه )
+                    فاصله تا روستای دیدنی اصفهک --> 43.2  کیلومتر ( 36 دقیقه )
+                    فاصله تا روستای گردشگری ازمیغان ( کال جنی و  تخت عروس ) --> 41.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا چشمه آب گرم و سرد مرتضی علی ( روستای خرو ) --> 34.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا روستای حلوان --> 82  کیلومتر ( 1 ساعت  )
+                    فاصله تا سد کریت --> 61 کیلومتر ( 1 ساعت و 1 دقیقه )
+                    فاصله تا روستای نایبند ( ماسوله کویر ) --> 209 کیلومتر ( 2 ساعت و 22 دقیقه )
+                    فاصله تا آبگرم دیگ رستم --> 218 کیلومتر ( 2 ساعت و 28 دقیقه )
+                </div>
+                <div class="tab-pane fade" id="cancel" role="tabpanel" aria-labelledby="contact-tab">
+                    زائرسرای آستان مبارک حضرت حسین بن موسی الکاظم (ع) طبس در جوار حرم مطهر ایشان قرار دارد و در مسیر زیارت امام رضا (ع) میزبان خیل عظیمی از زائران و شهروندان کشور است. در این امام زاده، تسهیلات اقامتی از قبیل واحدهای اقامتی با تجهیزات کامل برای استراحت، باغ رضوان با چشم‌اندازی قابل تحسین، آشپزخانه‌های عمومی با تجهیزات کامل آشپزی، دو باب سقاخانه دارای آب سرد و شیرین، فروشگاه‌های محصولات فرهنگی و مواد غذایی، دارالشفاء و پاسگاه انتظامی حرم، گرمابه رضوان، پارک بازی کودکان، پارکینگ‌های وسائل نقلیه سبک و سنگین، سرویس‌های بهداشتی و فضای سبز زیبا برای زائران فراهم است.
+
+                    قوانین رزرو آنی اتاق یا سوئیت
+                    1- رزرو اتاق یا سوئیت برای هر تاریخی از 31 روز قبل بر روی سایت فعال می گردد و ساعت 18 روز قبل نیز سایت بسته می‌شود. مدت رزرو شما هم نمی تواند بیش از 5 شب باشد. باتوجه به آن که حداقل 30 روز برای رزرو اتاق یا سوئیت مهلت دارید، خواهشمند است انجام رزرو را به ساعات پایانی موکول نکنید.
+                    2- در هنگام تشریف‌فرمایی به زائرسرای آستان حضرت حسین بن موسی الکاظم (ع)، کد رهگیری پیامک شده را همراه با یک کارت شناسایی معتبر که مشخصات آن با سفارش شما انطباق دارد و مدارک محرمیت (برای خانواده ها)، به دفتر زائرسرا ارائه دهید.
+                    3- اتاق ها در طبقه همکف هستند و پله نمی خورند، اما همه سوئیت‌ها در طبقه فوقانی هستند و پله دارند. خواهشمند است در هنگام رزرو به این نکته توجه فرمائید.
+                    4- همراه داشتن چادر برای خانم‌ها الزامی است.
+                    5- با توجه به آن که زائرسرا بصورت 24 ساعته و شبانه روزی مشغول خدمات دهی به مسافران است، چنانچه نیمه شب نیز تشریف بیاورید، واحد اقامتی رزرو شده در اختیار شما قرار خواهد گرفت.
+                    6- امکان رزرو اتاق یا سوئیت برای روز جاری به هیچ عنوان وجود ندارد. خواهشمند است سوال نفرمائید.
+                    7- رزرو تنها بصورت اینترنتی است و به هیچ عنوان رزرو تلفنی نداریم. خواهشمند است تلفن های پشتیبانی سایت را اشغال نفرمائید.
+                    8- شماره تماس پذیرش زائرسرای طبس:  05632813400
+
+                    فاصله (تقریبی) این اقامتگاه تا جاذبه های گردشگری و مکان های مهم
+                    فاصله تا  فرودگاه طبس --> 9.9 کیلومتر ( 10 دقیقه )
+                    فاصله تا  ایستگاه راه آهن طبس --> 3.6  کیلومتر ( 5 دقیقه )
+                    فاصله تا پایانه مسافربری طبس --> 600 متر ( 2 دقیقه )
+                    فاصله تا ارگ طبس --> 3 کیلومتر ( 7 دقیقه )
+                    فاصله تا باغ گلشن --> 4.4 کیلومتر (9 دقیقه )
+                    فاصله تا روستای دیدنی اصفهک --> 43.2  کیلومتر ( 36 دقیقه )
+                    فاصله تا روستای گردشگری ازمیغان ( کال جنی و  تخت عروس ) --> 41.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا چشمه آب گرم و سرد مرتضی علی ( روستای خرو ) --> 34.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا روستای حلوان --> 82  کیلومتر ( 1 ساعت  )
+                    فاصله تا سد کریت --> 61 کیلومتر ( 1 ساعت و 1 دقیقه )
+                    فاصله تا روستای نایبند ( ماسوله کویر ) --> 209 کیلومتر ( 2 ساعت و 22 دقیقه )
+                    فاصله تا آبگرم دیگ رستم --> 218 کیلومتر ( 2 ساعت و 28 دقیقه )
+                </div>
+                <div class="tab-pane fade" id="time" role="tabpanel" aria-labelledby="contact-tab">
+                    زائرسرای آستان مبارک حضرت حسین بن موسی الکاظم (ع) طبس در جوار حرم مطهر ایشان قرار دارد و در مسیر زیارت امام رضا (ع) میزبان خیل عظیمی از زائران و شهروندان کشور است. در این امام زاده، تسهیلات اقامتی از قبیل واحدهای اقامتی با تجهیزات کامل برای استراحت، باغ رضوان با چشم‌اندازی قابل تحسین، آشپزخانه‌های عمومی با تجهیزات کامل آشپزی، دو باب سقاخانه دارای آب سرد و شیرین، فروشگاه‌های محصولات فرهنگی و مواد غذایی، دارالشفاء و پاسگاه انتظامی حرم، گرمابه رضوان، پارک بازی کودکان، پارکینگ‌های وسائل نقلیه سبک و سنگین، سرویس‌های بهداشتی و فضای سبز زیبا برای زائران فراهم است.
+
+                    قوانین رزرو آنی اتاق یا سوئیت
+                    1- رزرو اتاق یا سوئیت برای هر تاریخی از 31 روز قبل بر روی سایت فعال می گردد و ساعت 18 روز قبل نیز سایت بسته می‌شود. مدت رزرو شما هم نمی تواند بیش از 5 شب باشد. باتوجه به آن که حداقل 30 روز برای رزرو اتاق یا سوئیت مهلت دارید، خواهشمند است انجام رزرو را به ساعات پایانی موکول نکنید.
+                    2- در هنگام تشریف‌فرمایی به زائرسرای آستان حضرت حسین بن موسی الکاظم (ع)، کد رهگیری پیامک شده را همراه با یک کارت شناسایی معتبر که مشخصات آن با سفارش شما انطباق دارد و مدارک محرمیت (برای خانواده ها)، به دفتر زائرسرا ارائه دهید.
+                    3- اتاق ها در طبقه همکف هستند و پله نمی خورند، اما همه سوئیت‌ها در طبقه فوقانی هستند و پله دارند. خواهشمند است در هنگام رزرو به این نکته توجه فرمائید.
+                    4- همراه داشتن چادر برای خانم‌ها الزامی است.
+                    5- با توجه به آن که زائرسرا بصورت 24 ساعته و شبانه روزی مشغول خدمات دهی به مسافران است، چنانچه نیمه شب نیز تشریف بیاورید، واحد اقامتی رزرو شده در اختیار شما قرار خواهد گرفت.
+                    6- امکان رزرو اتاق یا سوئیت برای روز جاری به هیچ عنوان وجود ندارد. خواهشمند است سوال نفرمائید.
+                    7- رزرو تنها بصورت اینترنتی است و به هیچ عنوان رزرو تلفنی نداریم. خواهشمند است تلفن های پشتیبانی سایت را اشغال نفرمائید.
+                    8- شماره تماس پذیرش زائرسرای طبس:  05632813400
+
+                    فاصله (تقریبی) این اقامتگاه تا جاذبه های گردشگری و مکان های مهم
+                    فاصله تا  فرودگاه طبس --> 9.9 کیلومتر ( 10 دقیقه )
+                    فاصله تا  ایستگاه راه آهن طبس --> 3.6  کیلومتر ( 5 دقیقه )
+                    فاصله تا پایانه مسافربری طبس --> 600 متر ( 2 دقیقه )
+                    فاصله تا ارگ طبس --> 3 کیلومتر ( 7 دقیقه )
+                    فاصله تا باغ گلشن --> 4.4 کیلومتر (9 دقیقه )
+                    فاصله تا روستای دیدنی اصفهک --> 43.2  کیلومتر ( 36 دقیقه )
+                    فاصله تا روستای گردشگری ازمیغان ( کال جنی و  تخت عروس ) --> 41.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا چشمه آب گرم و سرد مرتضی علی ( روستای خرو ) --> 34.5 کیلومتر ( 37 دقیقه )
+                    فاصله تا روستای حلوان --> 82  کیلومتر ( 1 ساعت  )
+                    فاصله تا سد کریت --> 61 کیلومتر ( 1 ساعت و 1 دقیقه )
+                    فاصله تا روستای نایبند ( ماسوله کویر ) --> 209 کیلومتر ( 2 ساعت و 22 دقیقه )
+                    فاصله تا آبگرم دیگ رستم --> 218 کیلومتر ( 2 ساعت و 28 دقیقه )
+                </div>
+            </div>
+        </div>
+        <hr class="blue_line mt10 mb10"/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card col-lg-3 col-md-6 col-sm-12 portfolio-item ov bg-light" style="width: 18rem ; margin: 5px auto ; background-color: rgba(24,179,180,0.2) ; height: 500px" data-aos="fade-down">
+                    <div class="hovereffect" style="height: 350px">
+                        <div class="row" style="direction: rtl">
+                            <div class="row" style="margin: 0 auto ; width: 100%">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-white" style=" border-bottom-left-radius: 20px ; z-index: 2 ; font-size:10px ; position: absolute ; height: 20px ;  border-top-left-radius: 20px ; background-color: #0056b3 ;   margin-top: 5px ;" data-aos="fade-left">
+                                    <h5 style="margin-right: 10px ; margin-top: 2px ; font-size: 10px">فوق العاده</h5>
+                                </div>
+                                <img class="card-img-top" src="../img/placement/sarien.jpg" alt="Card image cap" style="height: 250px ;position: relative">
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <h2 style="font-weight: bold">هتل لاله</h2>
+                            <p>
+                                <a href="#">سرعین</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl" style="margin-top: -50px">
+                        <div class="col-6"><h6 style="text-align: right">اقامتگاه بوم گردی</h6></div>
+                        <div class="col-6" style="direction: ltr">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl">
+                        <div class="col-12">
+                            <p class="text-muted" style="text-align: right">هتل لاله سرعین</p>
+                        </div>
+                    </div>
+                    <div class="list-group list-group-flush" style="height: 200px">
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one " style="font-size: 10px ; text-align: center"  >
+                            اقامتگاه بوم گردی عارف خرقانی 2 در روستای خرقان، شهر شاهرود، استان سمنان قرار دارد. این اقامتگاه داخل باغ و به فاصله یک کیلومتری از روستای خرقان ساخته شده است.
+                        </div>
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one text-center">
+                            <div class="row" style="font-size: 10px ; direction: rtl">
+                                <div class="col-6" style="text-align: right">
+                                    <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
+                                    <p class="text-primary">16000ریال</p>
+                                </div>
+                                <div class="col-6">
+                                    <a href="hotel_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-12 portfolio-item ov bg-light" style="width: 18rem ; margin: 5px auto ; background-color: rgba(24,179,180,0.2) ; height: 500px" data-aos="fade-down">
+                    <div class="hovereffect" style="height: 350px">
+                        <div class="row" style="direction: rtl">
+                            <div class="row" style="margin: 0 auto ; width: 100%">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-white" style=" border-bottom-left-radius: 20px ; z-index: 2 ; font-size:10px ; position: absolute ; height: 20px ;  border-top-left-radius: 20px ; background-color: #0056b3 ;   margin-top: 5px ;" data-aos="fade-left">
+                                    <h5 style="margin-right: 10px ; margin-top: 2px ; font-size: 10px">فوق العاده</h5>
+                                </div>
+                                <img class="card-img-top" src="../img/placement/sarien.jpg" alt="Card image cap" style="height: 250px ;position: relative">
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <h2 style="font-weight: bold">هتل لاله</h2>
+                            <p>
+                                <a href="#">سرعین</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl" style="margin-top: -50px">
+                        <div class="col-6"><h6 style="text-align: right">اقامتگاه بوم گردی</h6></div>
+                        <div class="col-6" style="direction: ltr">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl">
+                        <div class="col-12">
+                            <p class="text-muted" style="text-align: right">هتل لاله سرعین</p>
+                        </div>
+                    </div>
+                    <div class="list-group list-group-flush" style="height: 200px">
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one " style="font-size: 10px; text-align: center"  >
+                            اقامتگاه بوم گردی عارف خرقانی 2 در روستای خرقان، شهر شاهرود، استان سمنان قرار دارد. این اقامتگاه داخل باغ و به فاصله یک کیلومتری از روستای خرقان ساخته شده است.
+                        </div>
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one text-center">
+                            <div class="row" style="font-size: 10px ; direction: rtl">
+                                <div class="col-6" style="text-align: right">
+                                    <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
+                                    <p class="text-primary">16000ریال</p>
+                                </div>
+                                <div class="col-6">
+                                    <a href="hotel_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-12 portfolio-item ov bg-light" style="width: 18rem ; margin: 5px auto ; background-color: rgba(24,179,180,0.2) ; height: 500px" data-aos="fade-down">
+                    <div class="hovereffect" style="height: 350px">
+                        <div class="row" style="direction: rtl">
+                            <div class="row" style="margin: 0 auto ; width: 100%">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-white" style=" border-bottom-left-radius: 20px ; z-index: 2 ; font-size:10px ; position: absolute ; height: 20px ;  border-top-left-radius: 20px ; background-color: #0056b3 ;   margin-top: 5px ;" data-aos="fade-left">
+                                    <h5 style="margin-right: 10px ; margin-top: 2px ; font-size: 10px">فوق العاده</h5>
+                                </div>
+                                <img class="card-img-top" src="../img/placement/sarien.jpg" alt="Card image cap" style="height: 250px ;position: relative">
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <h2 style="font-weight: bold">هتل لاله</h2>
+                            <p>
+                                <a href="#">سرعین</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl" style="margin-top: -50px">
+                        <div class="col-6"><h6 style="text-align: right">اقامتگاه بوم گردی</h6></div>
+                        <div class="col-6" style="direction: ltr">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl">
+                        <div class="col-12">
+                            <p class="text-muted" style="text-align: right">هتل لاله سرعین</p>
+                        </div>
+                    </div>
+                    <div class="list-group list-group-flush" style="height: 200px">
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one " style="font-size: 10px; text-align: center"  >
+                            اقامتگاه بوم گردی عارف خرقانی 2 در روستای خرقان، شهر شاهرود، استان سمنان قرار دارد. این اقامتگاه داخل باغ و به فاصله یک کیلومتری از روستای خرقان ساخته شده است.
+                        </div>
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one text-center">
+                            <div class="row" style="font-size: 10px ; direction: rtl">
+                                <div class="col-6" style="text-align: right">
+                                    <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
+                                    <p class="text-primary">16000ریال</p>
+                                </div>
+                                <div class="col-6">
+                                    <a href="hotel_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-12 portfolio-item ov bg-light" style="width: 18rem ; margin: 5px auto ; background-color: rgba(24,179,180,0.2) ; height: 500px" data-aos="fade-down">
+                    <div class="hovereffect" style="height: 350px">
+                        <div class="row" style="direction: rtl">
+                            <div class="row" style="margin: 0 auto ; width: 100%">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-white" style=" border-bottom-left-radius: 20px ; z-index: 2 ; font-size:10px ; position: absolute ; height: 20px ;  border-top-left-radius: 20px ; background-color: #0056b3 ;   margin-top: 5px ;" data-aos="fade-left">
+                                    <h5 style="margin-right: 10px ; margin-top: 2px ; font-size: 10px">فوق العاده</h5>
+                                </div>
+                                <img class="card-img-top" src="../img/placement/sarien.jpg" alt="Card image cap" style="height: 250px ;position: relative">
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <h2 style="font-weight: bold">هتل لاله</h2>
+                            <p>
+                                <a href="#">سرعین</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl" style="margin-top: -50px">
+                        <div class="col-6"><h6 style="text-align: right">اقامتگاه بوم گردی</h6></div>
+                        <div class="col-6" style="direction: ltr">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="row" dir="rtl">
+                        <div class="col-12">
+                            <p class="text-muted" style="text-align: right">هتل لاله سرعین</p>
+                        </div>
+                    </div>
+                    <div class="list-group list-group-flush" style="height: 200px">
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one " style="font-size: 10px; text-align: center"  >
+                            اقامتگاه بوم گردی عارف خرقانی 2 در روستای خرقان، شهر شاهرود، استان سمنان قرار دارد. این اقامتگاه داخل باغ و به فاصله یک کیلومتری از روستای خرقان ساخته شده است.
+                        </div>
+                        <div href="Page/tour_detail.html" class="list-group-item plus_one text-center">
+                            <div class="row" style="font-size: 10px ; direction: rtl">
+                                <div class="col-6" style="text-align: right">
+                                    <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
+                                    <p class="text-primary">16000ریال</p>
+                                </div>
+                                <div class="col-6">
+                                    <a href="hotel_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-6">
+                    <h3> مقصدها </h3>
+                    <ul>
+                        <li> <a href="#"> قم </a> </li>
+                        <li> <a href="#">تهران</a> </li>
+                        <li> <a href="#"> مشهد </a> </li>
+                        <li> <a href="#"> شیراز </a> </li>
+                        <li> <a href="#">خوزستان </a> </li>
+                        <li> <a href="#"> اردبیل </a> </li>
+                        <li> <a href="#"> تبریز </a> </li>
+                        <li> <a href="#"> گلستان </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-6">
+                    <h3 style="font-size: 15px"> اقامتگاه های بوم گردی </h3>
+                    <ul>
+                        <li> <a href="#"> اقامتگاه بوم گردی عارف خرقانی </a> </li>
+                        <li> <a href="#"> اقامتگاه بوم گردی عمارت پروین </a> </li>
+                        <li> <a href="#"> هتل امیران نیشابور </a> </li>
+                        <li> <a href="#"> هتل الماس مشهد </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-6">
+                    <h3> آخرین تورها </h3>
+                    <ul>
+                        <li> <a href="#"> تور آبشار زیارت گرگان </a> </li>
+                        <li> <a href="#"> تور گروهی آبشار لوه تا جنگل ابر(نیشابور) </a> </li>
+                        <li> <a href="#"> تور اکوسافاری اوپرت(نیشابور)</a> </li>
+                        <li> <a href="#"> تورکویررضاآباد(نیشابور) </a> </li>
+                        <li> <a href="#"> تور دریا </a> </li>
+                        <li> <a href="#"> تور ابشار داراباد </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-4 col-sm-5 col-xs-12 ">
+                    <h3> تماس با ما </h3>
+                    <ul>
+                        <li> <a href="#"> 021-91027127 </a> </li>
+                        <li> <a href="#"> info@vidatour.ir </a> </li>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button" style="margin-top: 10px ; color: black"> ثبت</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-twitter"> </i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fab fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+    <div class="footer-bottom">
+        <div class="container" style="text-align: right">
+            <p class="pull-left">استفاده غیر تجاری از اطلاعات گردشگری این وبسایت تنها با ذکر نام منبع بلامانع است، تمامی حقوق مادی و معنوی برای وبسایت ویداتور محفوظ است  </p>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+</body>
+<script>
+    //Shrink header on scroll
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("header").style.fontSize = "30px";
+        } else {
+            document.getElementById("header").style.fontSize = "90px";
+        }
+    }
+</script>
+<script src="../CJ/js/aos.js"></script>
+<script>
+    AOS.init() ;
+</script>
+<link href="../CJ/css/style.css" rel="stylesheet">
+<script src="../CJ/js/jquery.min.js"></script>
+<script src="../CJ/js/bootstrap.js"></script>
+<script src="../CJ/js/bootstrap-datepicker.js"></script>
+<script src="../CJ/js/bootstrap-datepicker.fa.js"></script>
+<script src="../CJ/js/script.js"></script>
+<script>
+    $("#datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+</script>
+<script>
+    $("#datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+    $("#datepicker1").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+    $("#datepicker2").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+</script>
+</html>
