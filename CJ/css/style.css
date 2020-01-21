@@ -44,6 +44,7 @@ main>div>ul>li{
     margin: 36px;
     display: inline-block;
     padding: 16px;
+
     text-align: center;
     width: 100px;
     height: 100px;
@@ -807,6 +808,14 @@ a:hover{
     text-decoration: none;
 }
 
+
+hr.type_5 {
+    border: 0;
+    height: 55px;
+    background-image: url(../../img/icon/travel.png);
+    background-repeat: no-repeat;
+    color: black;
+}
 
 
 /*

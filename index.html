@@ -185,7 +185,7 @@
     </div>
 
 </header>
-<main>
+<main class="bg-light">
     <div style="background-image: url('img/logo/background.jpg') ; width: 100% ; height: auto; background-attachment: fixed ; background-repeat: no-repeat ; background-size: cover; text-align: center ;">
         <ul class="nav nav-tabs" id="myTab" role="tablist" style="text-align: center ; background-color: rgba(25,109,144,0.56)">
             <li class="nav-item">
@@ -202,15 +202,15 @@
             <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
                 <form action="Page/searchTour.html">
                     <div class="form-group row" style="direction: rtl ; text-align: right">
-                                <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
-                                    <i class="material-icons">location_on</i><label for="origin1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مبدا</label>
-                                    <input type="text" style="margin : 0 auto" class="form-control" id="origin1" aria-describedby="" placeholder="مبدا خود را وارد کنید">
-                                    <i class="material-icons">location_on</i><label for="location1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مقصد</label>
-                                    <input type="text" style="margin : 0 auto" class="form-control" id="location1" aria-describedby="" placeholder="مقصد یا نام هتل خود را وارد کنید">
-                                    <i class="material-icons">calendar_today</i><label for="time1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;زمان</label>
-                                    <input type="text" id="datepicker1" style="margin : 0 auto" class="form-control" id="time1" aria-describedby="" placeholder="زمان سفر خود را انتخاب کنید">
-                                    <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
-                                </div>
+                        <div class="col-lg-6 col-md-9 col-sm-12" style="margin: 30px auto ; background-color: rgba(12,56,100,0.83) ; padding: 20px ; border-radius: 20px ;">
+                            <i class="material-icons">location_on</i><label for="origin1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مبدا</label>
+                            <input type="text" style="margin : 0 auto" class="form-control" id="origin1" aria-describedby="" placeholder="مبدا خود را وارد کنید">
+                            <i class="material-icons">location_on</i><label for="location1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;مقصد</label>
+                            <input type="text" style="margin : 0 auto" class="form-control" id="location1" aria-describedby="" placeholder="مقصد یا نام هتل خود را وارد کنید">
+                            <i class="material-icons">calendar_today</i><label for="time1" style="text-align: center ; color: #0b0d18;">&nbsp;&nbsp;&nbsp;زمان</label>
+                            <input type="text" id="datepicker1" style="margin : 0 auto" class="form-control" id="time1" aria-describedby="" placeholder="زمان سفر خود را انتخاب کنید">
+                            <button class="btn btn-outline-dark mt-2" style="background-color: #9fcdff" type="submit">جست و جو</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -783,9 +783,13 @@
             </div>
         </div>
     </div>
-    <div class="container" style="direction: rtl ; margin-top: 10px">
+    <div class="container" style="direction: rtl ; margin : 10px auto">
         <div class="row">
-            <h3 style="text-align: right">اخرین تور ها</h3>
+            <h3 style=" margin: 0 auto ; text-align: center">اخرین تور ها</h3>
+        </div>
+        <div class="row">
+            <br>
+            <hr class="type_5">
         </div>
     </div>
     <hr class="blue_line mt10 mb10"/>
@@ -828,9 +832,9 @@
                         <div class="row" style="font-size: 10px ; direction: rtl">
                             <div class="col-6" style="text-align: right"><i class="material-icons">alarm_on</i>2 شب</div>
                             <div class="col-6">
-                                <i class="material-icons">flight</i>رفت:کیش ایرلاین
+                                <i class="material-icons">flight_takeoff</i> رفت:کیش ایرلاین
                                 <br>
-                                <i class="material-icons">flight</i>برگشت:کیش ایرلاین
+                                <i class="material-icons">flight_land</i>برگشت:کیش ایرلاین
                             </div>
                         </div>
                     </div>
@@ -838,10 +842,10 @@
                         <div class="row" style="font-size: 10px ; direction: rtl">
                             <div class="col-6" style="text-align: right">
                                 <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
-                                <p class="text-primary">16000ریال</p>
+                                <p style="font-size: 15px">16000ریال</p>
                             </div>
                             <div class="col-6">
-                                <a href="Page/tour_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                                <a href="Page/tour_detail.html" class="btn button_befor_footer" style=" background-color: rgba(224,226,4,0.95); color: black ; margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
                             </div>
                         </div>
                     </div>
@@ -1017,61 +1021,61 @@
                 </div>
             </div>
             <div class="card col-lg-3 col-md-6 col-sm-12 portfolio-item ov bg-light" style="width: 18rem ; margin: 5px auto ; background-color: rgba(24,179,180,0.2) ; height: 500px" data-aos="fade-down">
-            <div class="hovereffect" style="height: 350px">
-                <div class="row" style="direction: rtl">
-                    <div class="row" style="margin: 0 auto ; width: 100%">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-white" style=" border-bottom-left-radius: 20px ; z-index: 2 ; font-size:10px ; position: absolute ; height: 20px ;  border-top-left-radius: 20px ; background-color: red ;   margin-top: 5px ;" data-aos="fade-left">
-                            <h5 style="margin-right: 10px ; margin-top: 2px ; font-size: 10px">تور های فوری</h5>
-                        </div>
-                        <img class="card-img-top" src="img/placement/mashhad.jpg" alt="Card image cap" style="height: 250px ;position: relative">
-                    </div>
-                </div>
-                <div class="overlay">
-                    <h2 style="font-weight: bold">تور طرقبه</h2>
-                    <p>
-                        <a href="#">مشهد</a>
-                    </p>
-                </div>
-            </div>
-            <div class="row" dir="rtl" style="margin-top: -50px">
-                <div class="col-6"><h6 style="text-align: right">افرتور مشهد(10مهر)</h6></div>
-                <div class="col-6" style="direction: ltr">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
-            <div class="row" dir="rtl">
-                <div class="col-12">
-                    <p class="text-muted" style="text-align: right">ویداتور</p>
-                </div>
-            </div>
-            <div class="list-group list-group-flush" style="height: 200px">
-                <div href="Page/tour_detail.html" class="list-group-item plus_one text-center"  >
-                    <div class="row" style="font-size: 10px ; direction: rtl">
-                        <div class="col-6" style="text-align: right"><i class="material-icons">alarm_on</i>2 شب</div>
-                        <div class="col-6">
-                            <i class="material-icons">flight</i>رفت:کیش ایرلاین
-                            <br>
-                            <i class="material-icons">flight</i>برگشت:کیش ایرلاین
+                <div class="hovereffect" style="height: 350px">
+                    <div class="row" style="direction: rtl">
+                        <div class="row" style="margin: 0 auto ; width: 100%">
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-white" style=" border-bottom-left-radius: 20px ; z-index: 2 ; font-size:10px ; position: absolute ; height: 20px ;  border-top-left-radius: 20px ; background-color: red ;   margin-top: 5px ;" data-aos="fade-left">
+                                <h5 style="margin-right: 10px ; margin-top: 2px ; font-size: 10px">تور های فوری</h5>
+                            </div>
+                            <img class="card-img-top" src="img/placement/mashhad.jpg" alt="Card image cap" style="height: 250px ;position: relative">
                         </div>
                     </div>
+                    <div class="overlay">
+                        <h2 style="font-weight: bold">تور طرقبه</h2>
+                        <p>
+                            <a href="#">مشهد</a>
+                        </p>
+                    </div>
                 </div>
-                <div href="Page/tour_detail.html" class="list-group-item plus_one text-center">
-                    <div class="row" style="font-size: 10px ; direction: rtl">
-                        <div class="col-6" style="text-align: right">
-                            <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
-                            <p class="text-primary">16000ریال</p>
+                <div class="row" dir="rtl" style="margin-top: -50px">
+                    <div class="col-6"><h6 style="text-align: right">افرتور مشهد(10مهر)</h6></div>
+                    <div class="col-6" style="direction: ltr">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div class="row" dir="rtl">
+                    <div class="col-12">
+                        <p class="text-muted" style="text-align: right">ویداتور</p>
+                    </div>
+                </div>
+                <div class="list-group list-group-flush" style="height: 200px">
+                    <div href="Page/tour_detail.html" class="list-group-item plus_one text-center"  >
+                        <div class="row" style="font-size: 10px ; direction: rtl">
+                            <div class="col-6" style="text-align: right"><i class="material-icons">alarm_on</i>2 شب</div>
+                            <div class="col-6">
+                                <i class="material-icons">flight</i>رفت:کیش ایرلاین
+                                <br>
+                                <i class="material-icons">flight</i>برگشت:کیش ایرلاین
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <a href="Page/tour_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                    </div>
+                    <div href="Page/tour_detail.html" class="list-group-item plus_one text-center">
+                        <div class="row" style="font-size: 10px ; direction: rtl">
+                            <div class="col-6" style="text-align: right">
+                                <p class="text-muted" style="text-align: right">شروع قیمت از:</p>
+                                <p class="text-primary">16000ریال</p>
+                            </div>
+                            <div class="col-6">
+                                <a href="Page/tour_detail.html" class="btn btn-primary button_befor_footer" style="margin: 10px auto ; transition: all .5s ;">مشاهده بیشتر</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
             <div class="card col-lg-3 col-md-6 col-sm-12 portfolio-item ov bg-light" style="width: 18rem ; margin: 5px auto ; background-color: rgba(24,179,180,0.2) ; height: 500px" data-aos="fade-down">
                 <div class="hovereffect" style="height: 350px">
                     <div class="row" style="direction: rtl">
